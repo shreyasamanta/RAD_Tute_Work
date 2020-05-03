@@ -8,6 +8,12 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Home"
   end
 
+  test "should get home heading" do
+    get root_path
+    assert_response :success
+    assert_select "h1", "Welcome to the Sample App"
+  end
+
   test "should get help" do
     get help_path
     assert_response :success
