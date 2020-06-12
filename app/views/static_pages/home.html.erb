@@ -6,6 +6,23 @@
     Clock+ built by Shreya Samanta | s3724266@student.rmit.edu.au | Credit level | Wednesday 6:30-8:30pm
 
   </h2>
-  <%= render 'cities/city_list' %>
+
+  <%= form_tag root_path do %>
+    <div class="row top30 reload">
+        <div class="col-sm-12 col-xs-12">
+            <div class="form-inline">
+                <%= check_box_tag("name", "1", true, class: "checkbox") %>
+                <%= label_tag :name, "24-hour Time" %>
+            </div>
+        </div>
+    </div>
+  <% end %>
+
+  <% if true %>
+    <%= render 'cities/city_list_24hour' %>
+  <%else%>
+    <%= render 'cities/city_list' %>
+  <%end %>
+  
 </div>
 

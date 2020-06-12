@@ -11,7 +11,7 @@ City.create!(name: "Melbourne",
     )
 
 City.create!(name: "San Francisco",
-    offset:-7,
+    offset:-6,
     time_zone:"Mountain Time (US & Canada)",
     )
 
