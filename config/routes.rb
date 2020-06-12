@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
+  resources :cities
   root   'static_pages#home'
-  get    '/contact',to: 'static_pages#contact'
 end
