@@ -10,7 +10,8 @@ City.create!(name: "Melbourne",
     abbr:"AEST",
     offset:10,
     isdst: false,
-    text: "(UTC+10:00) Canberra, Melbourne, Sydney"
+    text: "(UTC+10:00) Canberra, Melbourne, Sydney",
+    time_zone:"Melbourne"
     )
 
 City.create!(name: "San Francisco",
@@ -18,7 +19,8 @@ City.create!(name: "San Francisco",
     abbr:"PDT",
     offset:-7,
     isdst: true,
-    text: "(UTC-07:00) Pacific Time (US & Canada)"
+    text: "(UTC-07:00) Pacific Time (US & Canada)",
+    time_zone:"Mountain Time (US & Canada)"
     )
 
 City.create!(name: "Tokyo",
@@ -26,7 +28,8 @@ City.create!(name: "Tokyo",
     abbr:"JST",
     offset:9,
     isdst: false,
-    text: "(UTC+10:00) Osaka, Sapporo, Tokyo"
+    text: "(UTC+10:00) Osaka, Sapporo, Tokyo",
+    time_zone:"Tokyo"
     )
 
 City.create!(name: "Perth",
@@ -34,5 +37,6 @@ City.create!(name: "Perth",
     abbr:"WAST",
     offset:8,
     isdst: false,
-    text: "(UTC+08:00) Perth"
+    text: "(UTC+08:00) Perth",
+    time_zone:"Perth"
     )

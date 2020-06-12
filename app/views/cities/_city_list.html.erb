@@ -14,7 +14,7 @@
     <% @cities.each do |city| %>
       <tr>
         <td><%= city.name %></td>
-        <td><%= Time.now %></td>
+        <td><%= Time.use_zone(city.time_zone) {Time.current} %></td>
         <td><%= city.offset-10 %>h</td>
         <td>Business</td>
       </tr>
