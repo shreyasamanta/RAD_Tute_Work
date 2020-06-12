@@ -1,0 +1,23 @@
+<h4>List of cities</h4>
+<table class = "table">
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Time</th>
+      <th>Time Difference</th>
+      <th>Mode</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cities.each do |city| %>
+      <tr>
+        <td><%= city.name %></td>
+        <td><%= Time.now %></td>
+        <td><%= city.offset-10 %>h</td>
+        <td>Business</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
