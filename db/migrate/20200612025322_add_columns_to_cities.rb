@@ -5,6 +5,6 @@ class AddColumnsToCities < ActiveRecord::Migration[5.2]
     add_column :cities, :abbr, :string
     add_column :cities, :offset, :integer
     add_column :cities, :isdst, :boolean
-    add_column :cities, :text, :string
+    add_column :cities, :time_zone, :string
   end
 end
