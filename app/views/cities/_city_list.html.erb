@@ -5,7 +5,6 @@
       <th style="text-align:center">Time</th>
       <th style="text-align:center">Time Difference</th>
       <th style="text-align:center">Mode</th>
-      <th style="text-align:center">Day</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,10 +13,17 @@
     <% @cities.each do |city| %>
       <tr>
         <td><%= city.name %></td>
-        <td><%= Time.use_zone(city.time_zone) {Time.current}.strftime("%k:%M") %></td>
+        <td><%= Time.use_zone(city.time_zone){Time.current}.strftime("%k:%M") %></td>
         <td><%= city.offset-10 %>h</td>
-        <td>Business</td>
-        <td> Today </td>
+        <% if (Time.use_zone(city.time_zone){Time.current}.hour <18 &&  Time.use_zone(city.time_zone){Time.current}.hour >=9)%>
+          <td>Business time</td>
+        <% elsif (Time.use_zone(city.time_zone){Time.current}.hour <20 &&  Time.use_zone(city.time_zone){Time.current}.hour >=18)%>
+          <td>Business overtime</td>
+        <% elsif (Time.use_zone(city.time_zone){Time.current}.hour <8 ||  Time.use_zone(city.time_zone){Time.current}.hour >=23)%>
+          <td>Sleeping time</td>
+        <% else %>
+          <td>Person time</td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
